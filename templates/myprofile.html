@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block title %}
+    My profile
+{% endblock %}
+{% block main %}
+    <div class = "bg-light p-5 rounded-lg m-3">
+        <h1 class="display-4">Hello, {{username}}</h1>
+        <p class="lead">Save to invest, Dont let your money sleep</p>
+        <hr class = "my-4">
+        <p class ="lead">
+            <form action = "/addcash" method = "post">
+                <input class = "mb-3 form-control mx-auto w-auto" type = "number" autofocus name = "additionalcash" placeholder = "Cash">
+                <button class = "btn btn-primary" type = "submit">Add ca$h</button>
+            </form>
+        </p>
+        <p class="lead">
+            <a class="btn btn-danger btn-lg" href="/deleteaccount" role="button">Delete account</a>
+        </p>
+    </div>
+    
+{% endblock %}

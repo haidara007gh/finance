@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block title %}
+    History
+{% endblock %}
+{% block main %}
+    <table class = "table">
+        <thead>
+            <tr>
+                <td>Timestamp</td>
+                <td>Transaction</td>
+                <td>Name</td>
+                <td>Symbol</td>
+                <td>Price</td>
+                <td>Share</td>
+                <td>Total</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for list in mylist %}
+            <tr>
+                {% for i in list %}
+                    <td>{{list[i]}}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "layout.html"%}
+{% block title %}
+    Quoted
+{% endblock %}
+{% block main %}
+    {% if response %}
+        <table class="table">  
+            <thead>
+                {% for r in response %}
+                    <td>{{r}}</td>
+                {% endfor %}
+            </thead>
+            
+        <tbody>
+            <tr>
+                <td>{{response["name"]}}</td>
+                <td>{{response["price"] | usd}}</td>
+                <td>{{response["symbol"]}}</td>
+            </tr>
+        </tbody>
+    </table>
+    {% else %}
+
+    {% endif %}
+{% endblock %}

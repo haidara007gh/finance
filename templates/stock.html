@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block title %}
+    Stock
+{% endblock%}
+{% block main %}
+<div class = "bg-light p-5 rounded-lg m-3 mb-3">
+    <h1 class="display-4">{{stock["name"]}} <span>  </span><span class="badge bg-secondary ">{{stock["symbol"]}}</span></h1>
+    <hr class = "my-4">
+    <h3 class="fs-2 fw-bolder">{{stock["shares"]}}</h3>
+    
+    <h3 class="fs-1">{{stock["price"] | usd }}</h3>
+</div>
+<form  method = "post">
+    <input class = "mb-3 form-control mx-auto w-auto" type = "text" autofocus name = "symbol" value = "{{stock['symbol']}}"placeholder = "Symbol" hidden>
+    <input class = "mb-3 form-control mx-auto w-auto" type = "text" name = "shares" placeholder = "Shares">
+    <button class = "btn btn-primary" type = "submit" formaction="/buy">Buy</button>
+    <button class = "btn btn-primary" type = "submit" formaction="/sell">Sell</button>
+</form>
+
+
+{% endblock %}
